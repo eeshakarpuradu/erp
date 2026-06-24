@@ -12,8 +12,8 @@ export const GET_EMPLOYEES = gql`
     }
 }
 `
-const GET_EMPLOYEE = gql`
-        query($id: ID!){
+export const GET_EMPLOYEE = gql`
+        query GetEmployee($id: ID!){
             user(id : $id) {
                 id
                 name

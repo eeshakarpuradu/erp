@@ -9,26 +9,55 @@ export default function EmployeeAdd() {
 
     const navigate = useNavigate()
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
+    // const [name, setName] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [phone, setPhone] = useState('')
+
+    const [newEmployee, setNewEmployee] = useState({
+        name: '',
+        email: '',
+        phone: ''
+    })
+
+    function handleChange(event){
+        const {value, id} = event.currentTarget
+        setNewEmployee(prevEmployee => ({
+            ...prevEmployee, [id]: value
+        }))
+    }
+
+    function handleSubmit(){}
+
 
     return (
         <>
             <div className='add-emp-form'>
                 <p>Form</p>
-                <button onClick={() => navigate('/')}>Cancel</button>
+                <button onClick={() => navigate('/')}>Back</button>
             </div>
             <div>
                 <label>Name</label>
-                <input type="text" value = {name} onChange = {(e) => setName(e.target.value)}>
+                <input type="text" value = {newEmployee.name} onChange = {handleChange} id="name">
                 </input>
+                <br></br>
+                <br></br>
                 <label>Email</label>
-                <input type="text" value = {email} onChange = {(e) => setEmail(e.target.value)}>
+                <input type="text" value = {newEmployee.email} onChange = {handleChange} id="email">
                 </input>
+                <br></br>
+                <br></br>
                 <label>Phone</label>
-                <input type="text" value = {phone} onChange = {(e) => setPhone(e.target.value)}>
+                <input type="text" value = {newEmployee.phone} onChange = {handleChange} id="phone">
                 </input>
+                <br></br>
+                <br></br>
+                <button onClick={handleSubmit}>Submit</button>
+            </div>
+            <div>
+                <p>new employee</p>
+                <p>Name: {newEmployee.name}</p>
+                <p>Email: {newEmployee.email}</p>
+                <p>Phone: {newEmployee.phone}</p>
             </div>
         </>
     )

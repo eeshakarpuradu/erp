@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import api from './api'
 import {gql} from '@apollo/client'
 import {useQuery} from '@apollo/client/react'
-
+import {GET_EMPLOYEE} from './graphql/employeeqm.js'
 // const users = [
 //     {
 //       id:1,
@@ -32,19 +32,7 @@ import {useQuery} from '@apollo/client/react'
 //   ]
 
 function EmployeeDetail() {
-    
-     const GET_EMPLOYEE = gql`
-        query GetEmployee($id: ID!){
-            user(id : $id) {
-                id
-                name
-                email
-                phone
-            }
-        }
-    `
     // $id: ID!  means: variable named id, type ID, required (! = required)
-
     const {id} = useParams(); //returns a string 
     const navigate = useNavigate()
     // const [user, setUser] = useState([])
