@@ -24,12 +24,25 @@ export const GET_EMPLOYEE = gql`
     `
 
 export const ADD_EMPLOYEE = gql`
-    mutation ($name: String, $email: String, $phone: Int!) {
-        addEmployee(name: $name, email: $email, phone: $phone){
-            id,
-            name,
-            email,
-            department
+    mutation(
+        $name: String!,
+        $username: String!,
+        $email: String!,
+        $phone: String
+        ) {
+        createUser(
+            input: {
+            name: $name
+            username: $username
+            email: $email
+            phone: $phone
+            }
+        ) {
+            id
+            name
+            username
+            email
+            phone
         }
     }
 
