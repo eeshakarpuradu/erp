@@ -4,6 +4,7 @@ import api from './api'
 import {gql} from '@apollo/client'
 import {useQuery} from '@apollo/client/react'
 import {GET_EMPLOYEE} from './graphql/employeeqm.js'
+import UpdateDetailsPopUp from './popups/updateDetailsPopUp.jsx';
 // const users = [
 //     {
 //       id:1,
@@ -39,6 +40,9 @@ function EmployeeDetail() {
     // const [loading, setLoading] = useState(true)
     // const [error, setError] = useState(null)
 
+    //open a popup to update details
+    const [openPopup, setOpenPopup] = useState(false)
+
     const {data, loading, error} = useQuery(GET_EMPLOYEE, {
         variables: {id},
     })
@@ -68,7 +72,15 @@ function EmployeeDetail() {
                 <p>Name: {user.name}</p>
                 <p>Email: {user.email}</p>
                 <p>Phone: {user.phone}</p>
+                <button onClick={() => {setOpenPopup(true)}}>Update details</button>
             </div>
+
+            {openPopup && (
+                <UpdateDetailsPopUp 
+                    open={openPopup}
+                    handleClose={() => setOpenPopup(false)}
+                />
+            )}
         </>
     )
 }

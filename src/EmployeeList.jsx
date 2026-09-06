@@ -45,13 +45,9 @@ function EmployeeList() {
   const filteredUsers =  useMemo(() => 
   {
         return employees.filter((user) => (
-        //return(
           user.name.toLowerCase().includes(filterValue.toLowerCase()) ||
-          // user.Role.toLowerCase().includes(filterValue.toLowerCase()) ||
           user.email.toLowerCase().includes(filterValue.toLowerCase()) ||
-          // user.Department.toLowerCase().includes(filterValue.toLowerCase()
           user.phone.toLowerCase().includes(filterValue.toLowerCase())
-        //)
       ))
     }, [employees, filterValue])
 
@@ -61,7 +57,11 @@ function EmployeeList() {
   return (
     <>
     <h2 className = "pro-name">Employee Manager</h2>
-    <input type = "text" placeholder = "Search by name, role or department" onChange = {handleFilter}/>
+    <input 
+      type = "text" 
+      placeholder = "Search by name, role or department" 
+      onChange = {handleFilter}
+    />
     {/* <button onClick={handleSubmit}>Enter</button> */}
       {
         filteredUsers.map((user) => (
@@ -69,8 +69,6 @@ function EmployeeList() {
             key = {user.id}
             id = {user.id}
             name = {user.name}
-            // Role = {user.Role}
-            // Department = {user.Department}
             Email = {user.email}
             phone = {user.phone}
           />
