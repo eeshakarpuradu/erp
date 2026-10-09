@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import '../EmployeeTable.css'
+// erp\erp\src\EmployeeTable.css
 
 function Card({
     id = 0,
@@ -7,11 +9,18 @@ function Card({
     // Role = "default role",
     // Department = "default department"
     Email = "xxx@gmail.com",
-    phone = "default"
+    phone = "default",
+    data = 0,
+    empTable = false
 }) {
     return (
         <>
-            
+        {empTable ? 
+            <div className = "card-component-table">
+                <h3>{name}</h3>
+                <p>{data}</p>
+            </div> 
+            :
             <div className = "card-component">
                 <h3>{name}</h3>
                 {/* <p>{Role}</p>
@@ -20,6 +29,7 @@ function Card({
                 <p>{Email}</p>
                 <Link to={`/employee/${id}`}>View Details</Link>
             </div>
+        }
         </>
     )
 }

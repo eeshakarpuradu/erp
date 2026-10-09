@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+p, h3{
+    margin: 0;
+    padding: 0;
+}
+
+.page-container{
+    margin: 10px;
+}
+
+.cards-container {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    /* justify-content: center; */
+
+}
+
+.card-component-table{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* align-items: center; */
+}
+
+.tabs-container{
+    margin: 30px 20px 20px;
+    display: flex;
+    gap: 0px;
+}
+
+/* 1. Reset border gaps and scale the table */
+.table-container table {
+  width: 100%;
+  border-collapse: collapse; /* Prevents double-borders between cells */
+}
+
+/* 2. Add outlines to headers and data cells */
+.table-container th, 
+.table-container td {
+  border: 1px solid #cbd5e1; /* A clean, modern gray outline */
+  padding: 10px 14px;        /* Spacing inside the cells */
+  text-align: left;
+}
+
+/* 3. Optional: Give the header a distinct look */
+.table-container th {
+  background-color: #f8fafc;
+  font-weight: 600;
+}

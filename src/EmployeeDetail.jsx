@@ -79,6 +79,7 @@ function EmployeeDetail() {
                 <UpdateDetailsPopUp 
                     open={openPopup}
                     handleClose={() => setOpenPopup(false)}
+                    details = {user}
                 />
             )}
         </>

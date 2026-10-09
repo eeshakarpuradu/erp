@@ -2,6 +2,7 @@ import {Routes, Route} from 'react-router-dom'
 import EmployeeList from './EmployeeList.jsx'
 import EmployeeDetail from './EmployeeDetail.jsx'
 import EmployeeAdd from './EmployeeAdd.jsx'
+import EmployeeTable from './EmployeeTable.jsx'
 import Navbar from './Navbar.jsx'
 // import FormValidation from './FormValidation.jsx'
 
@@ -13,6 +14,7 @@ function App() {
             <Route path="/" element= {<EmployeeList />} />
             <Route path="/employee/:id" element= {<EmployeeDetail />} />
             <Route path="/add" element= {<EmployeeAdd />} />
+            <Route path="/table" element= {<EmployeeTable />} />
         </Routes>
         {/* <FormValidation /> */}
         </>

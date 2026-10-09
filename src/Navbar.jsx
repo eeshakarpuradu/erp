@@ -5,7 +5,8 @@ export default function Navbar() {
         <>
             <nav>
                 <Link to="/">ERP</Link>
-                <Link to={'/add'}>+ Add</Link>
+                <Link to={'/add'}> + Add</Link>
+                <Link to={'/table'}> Table</Link>
             </nav>
         </>
     )
